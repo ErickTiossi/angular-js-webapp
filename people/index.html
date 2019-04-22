@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular JS - People</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- external scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="../services/PeopleService.js"></script>
+    <script src="index.js"></script>
+</head>
+<body class="container" ng-app="app" >    
+    <div ng-controller="PeopleController">
+        <h1>Pessoas</h1>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Local de Nascimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        
+                    <tr ng-repeat="pessoa in list">
+                    <td> {{pessoa._id}}</td>
+                    <td> {{pessoa.personName}}</td>
+                    <td> {{pessoa.personDateOfBirth}}</td>
+                    <td> {{pessoa.personPlaceOfBirth}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class ="form-group">
+            <button class="btn btn-primary" ng-click="sair()">Sair</button>
+        </div>
+    </div>
+</body>
+</html>
