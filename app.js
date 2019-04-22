@@ -3,5 +3,7 @@ angular.module('app').controller("IndexController", function($rootScope, $window
         $rootScope.$evalAsync(function () {
             $window.location.href = "/signin";
         })
+    } else {
+        $window.location.href = "/home";
     }
 });
